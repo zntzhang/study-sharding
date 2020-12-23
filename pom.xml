@@ -77,6 +77,12 @@
             <artifactId>freemarker</artifactId>
             <version>2.3.30</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+        </dependency>
     </dependencies>
 
 

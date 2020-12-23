@@ -8,6 +8,7 @@ import com.example.studysharding.common.service.IUserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * <p>
@@ -27,6 +28,21 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public List<User> getUserList() {
         return baseMapper.selectList(Wrappers.<User>lambdaQuery());
+    }
+
+    /**
+     * 模拟查询返回用户信息
+     * @param name
+     * @return
+     */
+    @Override
+    public User findUserByName(String name){
+        User user = new User();
+        user.setName(name);
+        user.setPwd("J/ms7qTJtqmysekuY8/v1TAS+VKqXdH5sB7ulXZOWho=");//密码明文是123456
+        user.setSalt("wxKYXuTPST5SG0jMQzVPsg==");//加密密码的盐值
+        user.setId(new Random().nextLong());//随机分配一个id
+        return user;
     }
 
 }

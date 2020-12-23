@@ -16,4 +16,6 @@ import java.util.List;
 public interface IUserService extends IService<User> {
 
     List<User> getUserList();
+
+    User findUserByName(String uname);
 }
